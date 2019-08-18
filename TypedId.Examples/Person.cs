@@ -11,7 +11,7 @@ namespace TypedId.Examples
 
         private Person(Guid id, string firstName)
         {
-            this.Id = Guid<Person>.Wrap(id);
+            this.Id = IdFor<Person>.Wrap(id);
             this.FirstName = firstName;
         }
     }

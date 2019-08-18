@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TypedId.Examples
 {
@@ -15,7 +13,7 @@ namespace TypedId.Examples
 
         private Message(Guid id, string content)
         {
-            this.Id = Guid<Message>.Wrap(id);
+            this.Id = IdFor<Message>.Wrap(id);
             this.Content = content;
         }
     }
