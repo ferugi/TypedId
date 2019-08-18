@@ -1,8 +1,5 @@
-# typedid
-TypedId is a small library which provides flexible tools to tie IDs (in the form of Guids, strings etc) to the type of object that owns them.
-
-## Example
-ID the following object represents a common scenario:
+# TypedId
+TypedId is a small library which provides flexible tools to tie IDs (in the form of Guids, strings etc) to the type of object that owns them. For example, look at the following common scenario:
 
 ```csharp
 public class Person
