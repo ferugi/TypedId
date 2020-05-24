@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypedId", "TypedId\TypedId.csproj", "{4BD8372F-C7BE-40A1-8495-A61E9FA0AB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypedId", "TypedId\TypedId.csproj", "{4BD8372F-C7BE-40A1-8495-A61E9FA0AB17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypedId.Examples", "TypedId.Examples\TypedId.Examples.csproj", "{C113987F-9985-4514-A967-BAB0EE59DC6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypedId.Examples", "TypedId.Examples\TypedId.Examples.csproj", "{C113987F-9985-4514-A967-BAB0EE59DC6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F63D42D-5B97-40A4-A3AE-F0AFFD1D7827}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
