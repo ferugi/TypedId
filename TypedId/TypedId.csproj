@@ -8,7 +8,9 @@
     <Company />
     <Product>TypedId Library</Product>
     <Copyright>MIT</Copyright>
+    <Title>TypedId</Title>
     <Description>Library to provide strongly typed ID's.</Description>
+    <Summary>Library to provide strongly typed ID's.</Summary>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>TypedId</PackageTags>
     <PackageProjectUrl>https://github.com/ferugi/TypedId</PackageProjectUrl>
