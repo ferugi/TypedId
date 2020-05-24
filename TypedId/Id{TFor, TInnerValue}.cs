@@ -18,11 +18,20 @@ namespace TypedId
         }
 
         /// <inheritdoc />
+        public TInnerValue Unwrap() => this.value;
+
+        /// <inheritdoc />
+        object IId<TFor>.Unwrap() => this.value;
+
+        /// <inheritdoc />
+        public Type GetInnerType() => typeof(TInnerValue);
+
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (obj is IId<TFor> otherId)
             {
-                var otherInnerValue = otherId.Unwrap<TInnerValue>();
+                var otherInnerValue = otherId.Unwrap();
                 return this.value.Equals(otherInnerValue);
             }
 
@@ -30,42 +39,18 @@ namespace TypedId
         }
 
         /// <inheritdoc />
-        public bool Equals(IId<TFor> other) => Equals((object)other);
+        public bool Equals(IId<TFor> other) => this.Equals((object)other);
 
         /// <inheritdoc />
-        public TInnerValue Unwrap() => this.value;
+        public bool Equals(IId<TFor, TInnerValue> other) => this.Equals((object) other);
 
         /// <inheritdoc />
-        public override int GetHashCode() => typeof(Id<TFor, TInnerValue>).GetHashCode() ^ this.value.GetHashCode();
-
-        /// <inheritdoc />
-        TInnerValue IId<TFor, TInnerValue>.Unwrap()
+        public override int GetHashCode()
         {
-            throw new NotImplementedException();
-        }
-
-        /// <inheritdoc />
-        bool IEquatable<IId<TFor, TInnerValue>>.Equals(IId<TFor, TInnerValue> other)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <inheritdoc />
-        bool IId<TFor>.Equals(object other)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <inheritdoc />
-        int IId<TFor>.GetHashCode()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <inheritdoc />
-        public TExplicitValue Unwrap<TExplicitValue>()
-        {
-            throw new NotImplementedException();
+            unchecked
+            {
+                return typeof(Id<TFor, TInnerValue>).GetHashCode() ^ this.value.GetHashCode();
+            }
         }
     }
 }

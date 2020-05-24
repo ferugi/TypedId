@@ -16,6 +16,6 @@ namespace TypedId
         /// <returns>
         ///     The inner ID as <typeparamref name="TInnerValue"/>
         /// </returns>
-        TInnerValue Unwrap();
+        new TInnerValue Unwrap();
     }
 }

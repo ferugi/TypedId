@@ -9,11 +9,20 @@ namespace TypedId
     public interface IId<TFor> : IEquatable<IId<TFor>>
     {
         /// <summary>
-        ///     Unwraps the inner value explitily as <see cref="{TExplicitValue}"/>
+        ///     Unwraps the inner value as an object.
         /// </summary>
-        /// <typeparam name="TExplicitValue">Type of the inner value</typeparam>
-        /// <returns>The inner ID</returns>
-        TExplicitValue Unwrap<TExplicitValue>();
+        /// <returns>
+        ///     The inner ID.
+        /// </returns>
+        object Unwrap();
+
+        /// <summary>
+        ///     Returns the type of the inner value.
+        /// </summary>
+        /// <returns>
+        ///     The type of inner ID.
+        /// </returns>
+        Type GetInnerType();
 
         /// <inheritdoc />
         bool Equals(object other);
