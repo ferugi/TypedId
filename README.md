@@ -34,7 +34,8 @@ if (personA.Id == personB.Name) {
 Instead, you could do the following using interfaces and methods in this library:
 
 ```csharp
-public class Person
+// Note the class IIdentifiable<TSelf> is not required to use this library.
+public class Person : IIdentifiable<Person>
 {
 	// Objects ID
     public IId<Person> Id { get; }

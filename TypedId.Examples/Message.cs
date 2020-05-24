@@ -2,7 +2,7 @@
 
 namespace TypedId.Examples
 {
-    public class Message
+    public class Message : IIdentifiable<Message>
     {
         public IId<Message> Id { get; }
         public IId<Person> SenderId { get; set; }

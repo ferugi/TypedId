@@ -2,7 +2,7 @@
 
 namespace TypedId.Examples
 {
-    public class Person
+    public class Person : IIdentifiable<Person>
     {
         public IId<Person> Id { get; }
 
