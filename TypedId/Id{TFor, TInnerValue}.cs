@@ -8,7 +8,7 @@ namespace TypedId
     /// </summary>
     /// <typeparam name="TFor">Type the ID belongs to</typeparam>
     /// <typeparam name="TInnerValue">Type of the inner value, e.g. <see cref="string"/> or <see cref="Guid"/></typeparam>
-    internal struct Id<TFor, TInnerValue> : IId<TFor, TInnerValue>
+    public struct Id<TFor, TInnerValue> : IId<TFor, TInnerValue>
     {
         private readonly TInnerValue value;
 
