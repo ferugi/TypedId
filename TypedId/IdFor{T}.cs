@@ -7,6 +7,7 @@
     ///     The type the ID is for.
     /// </typeparam>
     public static class IdFor<T>
+        where T : IIdentifiable<T>
     {
         /// <summary>
         ///     Factory method which wraps as existing value as a strongly typed ID.

@@ -9,6 +9,7 @@ namespace TypedId
     /// <typeparam name="TFor">The type the ID is for.</typeparam>
     /// <typeparam name="TInnerValue">The inner (wrapped) type of the ID</typeparam>
     public interface IId<TFor, TInnerValue> : IEquatable<IId<TFor, TInnerValue>>, IId<TFor>
+        where TFor : IIdentifiable<TFor>
     {
         /// <summary>
         ///     Unwraps the ID as its inner type of <typeparamref name="TInnerValue"/>.
