@@ -7,6 +7,7 @@ namespace TypedId
     /// </summary>
     /// <typeparam name="TFor">The type the ID is for.</typeparam>
     public interface IId<TFor> : IEquatable<IId<TFor>>
+        where TFor : IIdentifiable<TFor>
     {
         /// <summary>
         ///     Unwraps the inner value as an object.
