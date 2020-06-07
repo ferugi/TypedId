@@ -12,7 +12,7 @@ namespace TypedId
     {
         private readonly TInnerValue value;
 
-        internal Id(TInnerValue innerValue)
+        public Id(TInnerValue innerValue)
         {
             this.value = innerValue;
         }
