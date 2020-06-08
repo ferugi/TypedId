@@ -10,6 +10,7 @@ namespace TypedId
     /// <typeparam name="TInnerValue">Type of the inner value, e.g. <see cref="string"/> or <see cref="Guid"/></typeparam>
     public struct Id<TFor, TInnerValue> : IId<TFor, TInnerValue>
         where TFor : IIdentifiable<TFor>
+        where TInnerValue : new()
     {
         private readonly TInnerValue value;
 
