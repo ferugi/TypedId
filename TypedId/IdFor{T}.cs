@@ -16,6 +16,7 @@
         /// <param name="innerValue">ID to wrap</param>
         /// <returns></returns>
         public static IId<T, TInnerValue> Wrap<TInnerValue>(TInnerValue innerValue)
+            where TInnerValue : new()
         {
             if (innerValue is TInnerValue)
             {
