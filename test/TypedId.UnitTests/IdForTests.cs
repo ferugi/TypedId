@@ -7,8 +7,8 @@ namespace TypedIdTests
 {
     public class IdForTests
     {
-
-        public Task IdForT_WithEmptyString_ReturnsNewId()
+        [Fact]
+        public async Task IdForT_WithEmptyString_ReturnsNewId()
         {
             // Arrange
             var idInput = string.Empty;
@@ -16,8 +16,8 @@ namespace TypedIdTests
             // Act
             var id = IdFor<Person>.Wrap(idInput);
 
-            Assert.NotNull
-
+            // Assert
+            Assert.NotNull(id);
         }
     }
 }
