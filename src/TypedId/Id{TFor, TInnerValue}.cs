@@ -8,11 +8,12 @@ namespace TypedId
     /// </summary>
     /// <typeparam name="TFor">Type the ID belongs to</typeparam>
     /// <typeparam name="TInnerValue">Type of the inner value, e.g. <see cref="string"/> or <see cref="Guid"/></typeparam>
-    internal struct Id<TFor, TInnerValue> : IId<TFor, TInnerValue>
+    public struct Id<TFor, TInnerValue> : IId<TFor, TInnerValue>
+        where TFor : IIdentifiable<TFor>
     {
         private readonly TInnerValue value;
 
-        internal Id(TInnerValue innerValue)
+        public Id(TInnerValue innerValue)
         {
             this.value = innerValue;
         }
@@ -21,10 +22,13 @@ namespace TypedId
         public TInnerValue Unwrap() => this.value;
 
         /// <inheritdoc />
-        object IId<TFor>.Unwrap() => this.value;
+        object IId.Unwrap() => this.value;
 
         /// <inheritdoc />
-        public Type GetInnerType() => typeof(TInnerValue);
+        Type IId.GetForType() => typeof(TFor);
+
+        /// <inheritdoc />
+        public Type GetInnerValueType() => typeof(TInnerValue);
 
         /// <inheritdoc />
         public override bool Equals(object obj)
@@ -37,6 +41,9 @@ namespace TypedId
 
             return false;
         }
+
+        /// <inheritdoc />
+        public bool Equals(IId other) => this.Equals((object)other);
 
         /// <inheritdoc />
         public bool Equals(IId<TFor> other) => this.Equals((object)other);
