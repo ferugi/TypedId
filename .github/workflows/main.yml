@@ -50,6 +50,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Pack
+      # TODO: Consider using GITHUB_RUN_NUMBER or something else to give a clearer package version
       run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID src/$PROJECT_NAME/$PROJECT_NAME.*proj
 
     - name: Upload Artifact
