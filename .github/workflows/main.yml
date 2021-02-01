@@ -20,6 +20,7 @@ env:
 
   # GitHub Packages Feed settings
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_FEED: https://nuget.pkg.github.com/ferugi/index.json
 
   # Official NuGet Feed settings
   NUGET_FEED: https://api.nuget.org/v3/index.json
@@ -60,7 +61,7 @@ jobs:
         path: ./src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg
 
     - name: Push to GitHub Feed
-      run: dotnet nuget push ./nupkg/*.nupkg --source "github" --skip-duplicate --api-key GITHUB_TOKEN
+      run: dotnet nuget push ./nupkg/*.nupkg --source $GITHUB_FEED --skip-duplicate --api-key GITHUB_TOKEN
 
   deploy:
     needs: build
