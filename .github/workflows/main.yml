@@ -33,7 +33,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE
     - uses: actions/checkout@v2
       
     - name: Setup .NET
