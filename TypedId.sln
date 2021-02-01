@@ -7,12 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypedId", "src\TypedId\Type
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypedId.Examples", "src\TypedId.Examples\TypedId.Examples.csproj", "{C113987F-9985-4514-A967-BAB0EE59DC6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypedId.UnitTests", "test\TypedId.UnitTests\TypedId.UnitTests.csproj", "{60DEFD18-A1C8-4CF8-A7D2-2C031AB36A44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypedId.UnitTests", "test\TypedId.UnitTests\TypedId.UnitTests.csproj", "{60DEFD18-A1C8-4CF8-A7D2-2C031AB36A44}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F63D42D-5B97-40A4-A3AE-F0AFFD1D7827}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{59493EFE-BA32-4D5F-9F54-B208EA1DF70A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main.yml = .github\workflows\main.yml
 	EndProjectSection
 EndProject
 Global
@@ -36,6 +41,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59493EFE-BA32-4D5F-9F54-B208EA1DF70A} = {0F63D42D-5B97-40A4-A3AE-F0AFFD1D7827}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71B1F8A9-D9D1-4F36-949D-DDBF25D4259D}
