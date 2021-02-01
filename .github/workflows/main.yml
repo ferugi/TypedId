@@ -60,8 +60,17 @@ jobs:
         name: nupkg
         path: ./src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg
 
-    - name: Push to GitHub Feed
-      run: dotnet nuget push ./nupkg/*.nupkg --source $GITHUB_FEED --skip-duplicate --api-key GITHUB_TOKEN
+  prerelease:
+    needs: build
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: nupkg
+      - name: Push to GitHub Feed
+        run: dotnet nuget push ./nupkg/*.nupkg --source $GITHUB_FEED --skip-duplicate --api-key $GITHUB_TOKEN
 
   deploy:
     needs: build
