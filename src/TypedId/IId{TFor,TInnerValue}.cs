@@ -4,7 +4,7 @@ namespace TypedId
 {
     /// <summary>
     ///     Indicates an implementing type is a strong typed ID, with the inner value of <see cref="TInnerValue"/>.
-    ///     Extends <see cref="IId{T}"/> by requiring an inner value type.
+    ///     Extends <see cref="IId{TFor}"/> by requiring an inner value type.
     /// </summary>
     /// <typeparam name="TFor">The type the ID is for.</typeparam>
     /// <typeparam name="TInnerValue">The inner (wrapped) type of the ID</typeparam>

@@ -1,8 +1,9 @@
 ﻿namespace TypedId
 {
     /// <summary>
-    ///     An identity shared amoungst one or more specfic classes.
+    ///     Indicates an implementing type is a strong typed ID which can be shared by multiple types.
     /// </summary>
+    /// <typeparam name="TFor">The type the ID is for.</typeparam>
     public interface ISharedId<out TFor>
     {
         /// <summary>

@@ -22,10 +22,7 @@ namespace TypedId
         public TInnerValue Unwrap() => this.value;
 
         /// <inheritdoc />
-        object IId.Unwrap() => this.value;
-
-        /// <inheritdoc />
-        Type IId.GetForType() => typeof(TFor);
+        object IId<TFor>.Unwrap() => this.value;
 
         /// <inheritdoc />
         public Type GetInnerValueType() => typeof(TInnerValue);
@@ -41,9 +38,6 @@ namespace TypedId
 
             return false;
         }
-
-        /// <inheritdoc />
-        public bool Equals(IId other) => this.Equals((object)other);
 
         /// <inheritdoc />
         public bool Equals(IId<TFor> other) => this.Equals((object)other);
