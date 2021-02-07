@@ -1,6 +1,6 @@
 ﻿namespace TypedId.Examples
 {
-    public struct ApplicantId : ISharedId<Applicant>, ISharedId<ApplicantDto>
+    public struct OrderId : ISharedId<Order>, ISharedId<OrderDto>
     {
         public object Unwrap()
         {
