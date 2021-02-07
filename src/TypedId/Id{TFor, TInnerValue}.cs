@@ -49,7 +49,7 @@ namespace TypedId
         public bool Equals(IId<TFor> other) => this.Equals((object)other);
 
         /// <inheritdoc />
-        public bool Equals(IId<TFor, TInnerValue> other) => this.Equals((object) other);
+        public bool Equals(IId<TFor, TInnerValue> other) => this.Equals((object)other);
 
         /// <inheritdoc />
         public override int GetHashCode()

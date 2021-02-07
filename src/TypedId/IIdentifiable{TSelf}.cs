@@ -12,4 +12,5 @@
         /// </summary>
         IId<TSelf> Id { get; }
     }
+
 }
